@@ -1,0 +1,36 @@
+#.github/rulesets/full-protection.yml
+name: Smart home Vision full-protection repos
+description: Basic security for all content
+target: repository # to everything branches, tags, etc.
+enforcement: active
+bypass_actors: []  # No bypass allowed, not even for admins
+
+rules:
+  # 1. GLOBAL REPOSITORY PROTECTIONS
+  - type: creation
+    parameters:
+      update_allows_creations: false
+  - type: update
+    parameters:
+      required_approving_review_count: 1
+  - type: deletion
+    parameters:
+      restrict_deletions: true
+
+# 2. BRANCH PROTECTIONS (applies to ALL branches)
+  - type: pull_request
+    parameters:
+      required_approving_review_count: 2
+      require_code_owner_reviews: true
+      required_review_thread_resolution: true
+      require_last_push_approval: true
+
+   - type: required_status_checks
+    parameters:
+      required_status_checks:
+        - context: "python-api / test & lint"
+        - context: "cpp-engine / build & test"
+      strict_required_status_checks_policy: true
+  - type: required_linear_history
+  - type: required_signatures
+  - type: non_fast_forward

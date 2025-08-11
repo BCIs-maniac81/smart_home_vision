@@ -1,0 +1,78 @@
+# === Python Specific ===
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-selfcheck.json
+.pytest_cache/
+.mypy_cache/
+
+
+# === C++ Specific ===
+# Build directories
+build/
+bin/
+lib/
+*.a
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+
+# === IDE/Editor ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# === System Files ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Dependency Files ===
+*.class
+*.log
+*.pyc
+*.pyo
+*.pyd
+
+# === Environment Files ===
+.env
+.venv
+.env.local
+.env.development
+.env.test
+.env.production
+
+# === Documentation ===
+_site/
+.sass-cache/
+.jekyll-cache/
+
+# === Data Files ===
+*.csv
+*.dat
+*.db
+*.dump
+*.sqlite
+
+
+# === Binary/Compiled ===
+*.bin
+*.hex
+*.test
+*.jar
+*.war
+*.ear
