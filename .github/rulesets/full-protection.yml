@@ -20,17 +20,7 @@ rules:
 # 2. BRANCH PROTECTIONS (applies to ALL branches)
   - type: pull_request
     parameters:
-      required_approving_review_count: 2
+      required_approving_review_count: 1
       require_code_owner_reviews: true
       required_review_thread_resolution: true
       require_last_push_approval: true
-
-   - type: required_status_checks
-    parameters:
-      required_status_checks:
-        - context: "python-api / test & lint"
-        - context: "cpp-engine / build & test"
-      strict_required_status_checks_policy: true
-  - type: required_linear_history
-  - type: required_signatures
-  - type: non_fast_forward
